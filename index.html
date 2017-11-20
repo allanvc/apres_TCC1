@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Um teste para verificar a significância de clusters</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Um teste para verificar a significância de clusters">
+  <meta name="author" content="Allan Vieira">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="./assets/css/style.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/unb_big_logo.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/est_logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Um teste para verificar a significância de clusters</h1>
+    <h2>Projeto de Pesquisa - TCC I</h2>
+    <p>Allan Vieira<br/>14/0128492</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <style type="text/css">
+body {background:grey transparent;
+}
+</style>
+
+<h2>Sumário</h2>
+
+<p><br>
+<br>
+1. Introdução</p>
+
+<ol>
+<li><p>Objetivos</p></li>
+<li><p>Metodologia</p></li>
+<li><p>Resultados Preliminares</p></li>
+<li><p>Cronograma</p></li>
+<li><p>Referências</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-2" style="background:grey;">
+  <hgroup>
+    <h1>O problema de pesquisa ...</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Introdução</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li class='fragment'>Expressivo desenvolvimento das técnicas de clustering nas últimas décadas;
+<br></li>
+<li class='fragment'>Real avanço científico;
+<br></li>
+<li class='fragment'><em>&quot;Hype&quot;</em> de <em>Machine Learning</em>;
+<br></li>
+<li class='fragment'><code>Mas...</code>
+
+<ul>
+<li class='fragment'>Algoritmos \(\rightarrow\) restrições:</li>
+<li class='fragment'>&quot;shape&quot; dos dados <code>vs</code> algoritmo empregado</li>
+<li class='fragment'>Definição a priori do número de clusters
+<br></li>
+</ul></li>
+<li class='fragment'>\(\rightarrow\) <code>&quot;Blinded by Science&quot;!!</code>
+<br></li>
+<li class='fragment'>Muitos algoritmos de clustering <code>vs</code> poucos métodos de verificação de k
+<br></li>
+<li class='fragment'><code>Como determinar o número ideal de clusters?</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Objetivos</h2>
+  </hgroup>
+  <article data-timings="">
+    <div align="center">
+<br>
+<br>
+<br>
+<br>
+- Desenvolver um algoritmo para testar a significância de clusters;
+<br>
+<br>
+<br>
+<br>
+<br>
+- Implementar o algoritmo em R e disponibilizá-lo através de um pacote;
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-5" style="background:grey;">
+  <hgroup>
+    <h1>O algoritmo ...</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Metodologia (1)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p><code>Cubic Clustering Criterion (CCC)</code> &amp; <code>probabilidade</code></p></li>
+<li><p>Algoritmo:</p></li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><center><img src="./assets/img/alg1.svg" align="middle">
+</center></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><center><img src="./assets/img/alg2.svg" align="middle">
+</center></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Metodologia (2)</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="./assets/widgets/hipercube_plotly.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-8" style="background:grey;">
+  <hgroup>
+    <h1>Alguns resultados ...</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <!-- --- .&twocol -->
+
+<h2>Resultados preliminares</h2>
+
+<!-- *** =left -->
+
+<!-- *** =right -->
+
+<table id='onecol' style='width:100%'>  <tr><th>M</th> <th>n1</th> <th>n2</th> <th>mean1</th> <th>mean2</th> <th>sd1</th> <th>sd2</th> <th>acerto</th></tr> <tr><td data-th='M'>100</td> <td data-th='n1'> 32</td> <td data-th='n2'>29</td> <td data-th='mean1'>-3</td> <td data-th='mean2'>1</td> <td data-th='sd1'>0.4</td> <td data-th='sd2'>0.4</td> <td data-th='acerto'>TRUE</td></tr> <tr><td data-th='M'>100</td> <td data-th='n1'> 15</td> <td data-th='n2'>13</td> <td data-th='mean1'>-1</td> <td data-th='mean2'>1</td> <td data-th='sd1'>0.3</td> <td data-th='sd2'>0.3</td> <td data-th='acerto'>TRUE</td></tr> <tr><td data-th='M'>100</td> <td data-th='n1'> 50</td> <td data-th='n2'>65</td> <td data-th='mean1'>-1</td> <td data-th='mean2'>1</td> <td data-th='sd1'>1.0</td> <td data-th='sd2'>1.0</td> <td data-th='acerto'>FALSE</td></tr> <tr><td data-th='M'>100</td> <td data-th='n1'> 50</td> <td data-th='n2'>65</td> <td data-th='mean1'>-1</td> <td data-th='mean2'>1</td> <td data-th='sd1'>0.7</td> <td data-th='sd2'>0.7</td> <td data-th='acerto'>TRUE</td></tr> <tr><td data-th='M'>100</td> <td data-th='n1'>100</td> <td data-th='n2'>80</td> <td data-th='mean1'>-1</td> <td data-th='mean2'>1</td> <td data-th='sd1'>0.5</td> <td data-th='sd2'>0.7</td> <td data-th='acerto'>TRUE</td></tr> </table>
+
+<p><br></p>
+
+<p>
+<img src="./assets/img/g1.svg" style="float: left; width: 19%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/g2.svg" style="float: left; width: 19%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/g3.svg" style="float: left; width: 19%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/g4.svg" style="float: left; width: 19%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/g5.svg" style="float: left; width: 19%; margin-right: 1%; margin-bottom: 0.5em;">
+</p>
+
+<!-- sol para imagens lado a lado: https://owlcation.com/stem/how-to-align-images-side-by-side -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Cronograma</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br>
+<br></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>2S2017:
+<p><center><img src="./assets/img/cron1.svg" align="middle">
+</center></p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>1S2018:
+<p><center><img src="./assets/img/cron2.svg" align="middle">
+</center></p></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Obrigado!!</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>[1] AUFFERMANN, W. F.; NGAN, S. C.; HU, X. <code>Cluster significance testing using the bootstrap.</code> NeuroImage, v. 17, p. 583–591, 2002. 1</p></li>
+<li><p>[2] BOTTOMLEY, P.; NAIRN, A. <code>Blinded by science: The managerial consequences of inadequately validated cluster analysis solutions.</code> International Journal of Market Research, v. 46, n. 2, 2004. 1</p></li>
+<li><p>[3] FUENTES, C.; CASELLA, G. <code>Testing for the existence of clusters.</code> p. 115–157, Jul 2009. Sort (Barc). 33(2). 1</p></li>
+<li><p>[4] HALKIDI Y. BATISTAKIS, M. V. M. <code>On clustering validation techniques. Journal of Intelligent Information Systems</code>, v. 17, n. 2/3, p. 107–145, 2001. 1</p></li>
+<li><p>[5] SAS Institute Inc., <code>Cubic Clustering Criterion.</code> 1983. SAS R Technical Report A-108. Cary,
+NC: SAS Institute Inc., 1983, 56 pp. 2</p></li>
+</ul>
+
+<!-- - [5] HANDL, J.; KNOWLES, J. `An evolutionary approach to objective clustering.` IEEE Transactions on Evolutionary Computation, v. 11, n. 1, Feb 2007. 2 -->
+
+<!-- - [5] LIU, Y. et al. `Statistical significance of clustering for high-dimension, low-sample size data.` Journal of the American Statistical Association, v. 103, n. 483, p. 1281–1293, Sep 2008. 1 -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='O problema de pesquisa ...'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Introdução'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Objetivos'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='O algoritmo ...'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Metodologia (1)'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Metodologia (2)'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Alguns resultados ...'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='NA'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Cronograma'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Obrigado!!'>
+         11
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
