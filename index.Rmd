@@ -18,7 +18,15 @@ assets      : {assets: ../../assets}
 <style type="text/css">
 body {background:grey transparent;
 }
+.quiz-option label{
+  display: inline;
+  font-size: 1em;
+}
+ul.nav li::before { content: ""; }  
+ul.nav li{ font-size: 18px; line-height: 24px;}
 </style>
+
+<script type="text/javascript" src="gifffer.min.js"></script>
 
 ## Sumário
 <br>
@@ -43,18 +51,18 @@ body {background:grey transparent;
 
 > - .fragment Expressivo desenvolvimento das técnicas de clustering nas últimas décadas;
 <br>
-> - .fragment Real avanço científico;
-<br>
 > - .fragment _"Hype"_ de _Machine Learning_;
 <br>
+<br>
 > - .fragment `Mas...`
-  - .fragment Algoritmos $\rightarrow$ restrições:
+  - .fragment algoritmos $\rightarrow$ restrições:
   - .fragment "shape" dos dados `vs` algoritmo empregado
-  - .fragment Definição a priori do número de clusters
+  - .fragment `definição a priori do número de clusters`
 <br>
 > - .fragment $\rightarrow$ `"Blinded by Science"!!`
 <br>
-> - .fragment Muitos algoritmos de clustering `vs` poucos métodos de verificação de k
+<br>
+> - .fragment Muitos algoritmos de clustering `vs` poucos métodos de verificação do `k`
 <br>
 > - .fragment `Como determinar o número ideal de clusters?`
 
@@ -76,33 +84,63 @@ body {background:grey transparent;
 </div>
 
 
---- .segue bg:grey
-# O algoritmo ...
+<!-- --- &twocol  -->
+<!-- ## Metodologia (1) -->
+
+<!-- - inspiração: `Cubic Clustering Criterion (CCC)` -->
+
+<!-- - Algoritmo: -->
+
+<!-- *** =left -->
+
+<!-- <p><center><img src="./assets/img/alg1.svg" align="middle"> -->
+<!-- </center></p> -->
+
+<!-- *** =right -->
+
+<!-- <p><center><img src="./assets/img/alg2.svg" align="middle"> -->
+<!-- </center></p> -->
 
 
---- &twocol 
+--- {class: class, tpl: tabs}
+
 ## Metodologia (1)
 
-- `Cubic Clustering Criterion (CCC)` & `probabilidade`
+*** {class: active, id: left_right}
+Funcionamento do kmeans:
+</br>
+(por Andrey A. Shabalin - http://shabal.in/)
+<p>
+<img src="./assets/img/left.gif" style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+<img src="./assets/img/right.gif" style="float: right; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+</p>
 
-- Algoritmo:
+*** {id: top_bottom}
+<br>
+<p>
+<img src="./assets/img/top.gif" style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+<img src="./assets/img/bottom.gif" style="float: right; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+</p>
 
-*** =left
 
-<p><center><img src="./assets/img/alg1.svg" align="middle">
-</center></p>
-
-*** =right
-
-<p><center><img src="./assets/img/alg2.svg" align="middle">
-</center></p>
-
+--- .segue bg:grey
+# O algoritmo ...
 
 --- .class #id
 ## Metodologia (2)
 
+inspiração: `Cubic Clustering Criterion (CCC)`
 
 <iframe src="./assets/widgets/hipercube_plotly.html" width=100% height=100% allowtransparency="true"> </iframe>
+
+
+
+--- .class #id
+## Metodologia (3)
+
+
+<iframe src="./assets/widgets/withinss_cube_plotly.html" width=100% height=100% allowtransparency="true"> </iframe>
+
 
 --- .segue bg:grey
 # Alguns resultados ...
@@ -162,16 +200,16 @@ tablecode(tab, tabletype="onecol")
 <br>
 *** =left
 - 2S2017:
-<p><center><img src="./assets/img/cron1.svg" align="middle">
+<p><center><img src="./assets/img/cron11.svg" align="middle">
 </center></p>
 
 *** =right
 - 1S2018:
-<p><center><img src="./assets/img/cron2.svg" align="middle">
+<p><center><img src="./assets/img/cron22.svg" align="middle">
 </center></p>
 
 --- .class #id
-## Obrigado!!
+## Bibliografia
 
 - [1] AUFFERMANN, W. F.; NGAN, S. C.; HU, X. `Cluster significance testing using the bootstrap.` NeuroImage, v. 17, p. 583–591, 2002. 1
 
@@ -181,10 +219,43 @@ tablecode(tab, tabletype="onecol")
 
 - [4] HALKIDI Y. BATISTAKIS, M. V. M. `On clustering validation techniques. Journal of Intelligent Information Systems`, v. 17, n. 2/3, p. 107–145, 2001. 1
 
-- [5] SAS Institute Inc., `Cubic Clustering Criterion.` 1983. SAS R Technical Report A-108. Cary,
+- [5] SAS Institute Inc., `Cubic Clustering Criterion.` 1983. SAS Technical Report A-108. Cary,
 NC: SAS Institute Inc., 1983, 56 pp. 2
 
 <!-- - [5] HANDL, J.; KNOWLES, J. `An evolutionary approach to objective clustering.` IEEE Transactions on Evolutionary Computation, v. 11, n. 1, Feb 2007. 2 -->
 
 <!-- - [5] LIU, Y. et al. `Statistical significance of clustering for high-dimension, low-sample size data.` Journal of the American Statistical Association, v. 103, n. 483, p. 1281–1293, Sep 2008. 1 -->
 
+
+--- .segue bg:grey
+
+# Obrigado!!
+
+<!-- como colocar figuras ao lado de palavras varias vezes em html -->
+<div>
+    <p>Feito no
+    <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com 
+    <img src="./assets/img/slidifylogo2.png" style="float: center; width: 12%;">;
+    <img src="./assets/img/plotlylogo.png" style="float: center; width: 7%;"> e
+    <img src="./assets/img/ggplotlogo.png" style="float: center; width: 7%;">!! </p>
+</div>
+
+Códigos e apresentação disponíveis em:
+<div>
+    <p>
+    <img src="./assets/img/gitlogo1.png" style="float: left; width: 5%;">
+    http://github.com/allanvc/
+    </p>
+</div>
+<br>
+<br>
+
+<!-- --- .class #id -->
+<!-- ## Obrigado!! -->
+
+
+<!-- <div> -->
+<!--     <p>Feito no -->
+<!--     <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com  -->
+<!--     <img src="./assets/img/slidifylogo2.png" style="float: center; width: 10%;">!! </p> -->
+<!-- </div> -->

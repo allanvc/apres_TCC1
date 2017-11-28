@@ -60,7 +60,15 @@
     <style type="text/css">
 body {background:grey transparent;
 }
+.quiz-option label{
+  display: inline;
+  font-size: 1em;
+}
+ul.nav li::before { content: ""; }  
+ul.nav li{ font-size: 18px; line-height: 24px;}
 </style>
+
+<script type="text/javascript" src="gifffer.min.js"></script>
 
 <h2>Sumário</h2>
 
@@ -98,21 +106,21 @@ body {background:grey transparent;
     <ul class = "build incremental">
 <li class='fragment'>Expressivo desenvolvimento das técnicas de clustering nas últimas décadas;
 <br></li>
-<li class='fragment'>Real avanço científico;
-<br></li>
 <li class='fragment'><em>&quot;Hype&quot;</em> de <em>Machine Learning</em>;
+<br>
 <br></li>
 <li class='fragment'><code>Mas...</code>
 
 <ul>
-<li class='fragment'>Algoritmos \(\rightarrow\) restrições:</li>
+<li class='fragment'>algoritmos \(\rightarrow\) restrições:</li>
 <li class='fragment'>&quot;shape&quot; dos dados <code>vs</code> algoritmo empregado</li>
-<li class='fragment'>Definição a priori do número de clusters
+<li class='fragment'><code>definição a priori do número de clusters</code>
 <br></li>
 </ul></li>
 <li class='fragment'>\(\rightarrow\) <code>&quot;Blinded by Science&quot;!!</code>
+<br>
 <br></li>
-<li class='fragment'>Muitos algoritmos de clustering <code>vs</code> poucos métodos de verificação de k
+<li class='fragment'>Muitos algoritmos de clustering <code>vs</code> poucos métodos de verificação do <code>k</code>
 <br></li>
 <li class='fragment'><code>Como determinar o número ideal de clusters?</code></li>
 </ul>
@@ -140,11 +148,69 @@ body {background:grey transparent;
 - Implementar o algoritmo em R e disponibilizá-lo através de um pacote;
 </div>
 
+<!-- --- &twocol  -->
+
+<!-- ## Metodologia (1) -->
+
+<!-- - inspiração: `Cubic Clustering Criterion (CCC)` -->
+
+<!-- - Algoritmo: -->
+
+<!-- *** =left -->
+
+<!-- <p><center><img src="./assets/img/alg1.svg" align="middle"> -->
+
+<!-- </center></p> -->
+
+<!-- *** =right -->
+
+<!-- <p><center><img src="./assets/img/alg2.svg" align="middle"> -->
+
+<!-- </center></p> -->
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-5" style="background:grey;">
+<slide class="class" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Metodologia (1)</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="tabbable">
+  <ul class="nav nav-pills">
+    <li class="tab active"><a href="#left_right" data-toggle="pill">left_right</a></li>
+    <li class="tab "><a href="#top_bottom" data-toggle="pill">top_bottom</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="left_right">
+      <p>Funcionamento do kmeans:
+</br>
+(por Andrey A. Shabalin - <a href="http://shabal.in/">http://shabal.in/</a>)</p>
+
+<p>
+<img src="./assets/img/left.gif" style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+<img src="./assets/img/right.gif" style="float: right; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+</p>
+
+    </div>
+    <div class="tab-pane fade in " id="top_bottom">
+      <p><br></p>
+
+<p>
+<img src="./assets/img/top.gif" style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+<img src="./assets/img/bottom.gif" style="float: right; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
+</p>
+
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-6" style="background:grey;">
   <hgroup>
     <h1>O algoritmo ...</h1>
   </hgroup>
@@ -154,42 +220,31 @@ body {background:grey transparent;
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Metodologia (1)</h2>
+    <h2>Metodologia (2)</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li><p><code>Cubic Clustering Criterion (CCC)</code> &amp; <code>probabilidade</code></p></li>
-<li><p>Algoritmo:</p></li>
-</ul>
+    <p>inspiração: <code>Cubic Clustering Criterion (CCC)</code></p>
 
-<div style='float:left;width:48%;' class='centered'>
-  <p><center><img src="./assets/img/alg1.svg" align="middle">
-</center></p>
+<iframe src="./assets/widgets/hipercube_plotly.html" width=100% height=100% allowtransparency="true"> </iframe>
 
-</div>
-<div style='float:right;width:48%;'>
-  <p><center><img src="./assets/img/alg2.svg" align="middle">
-</center></p>
-
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Metodologia (2)</h2>
+    <h2>Metodologia (3)</h2>
   </hgroup>
   <article data-timings="">
-    <iframe src="./assets/widgets/hipercube_plotly.html" width=100% height=100% allowtransparency="true"> </iframe>
+    <iframe src="./assets/widgets/withinss_cube_plotly.html" width=100% height=100% allowtransparency="true"> </iframe>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-8" style="background:grey;">
+<slide class="segue" id="slide-9" style="background:grey;">
   <hgroup>
     <h1>Alguns resultados ...</h1>
   </hgroup>
@@ -231,7 +286,7 @@ body {background:grey transparent;
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-10" style="background:;">
+<slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>Cronograma</h2>
   </hgroup>
@@ -242,7 +297,7 @@ body {background:grey transparent;
 <div style='float:left;width:48%;' class='centered'>
   <ul>
 <li>2S2017:
-<p><center><img src="./assets/img/cron1.svg" align="middle">
+<p><center><img src="./assets/img/cron11.svg" align="middle">
 </center></p></li>
 </ul>
 
@@ -250,7 +305,7 @@ body {background:grey transparent;
 <div style='float:right;width:48%;'>
   <ul>
 <li>1S2018:
-<p><center><img src="./assets/img/cron2.svg" align="middle">
+<p><center><img src="./assets/img/cron22.svg" align="middle">
 </center></p></li>
 </ul>
 
@@ -261,7 +316,7 @@ body {background:grey transparent;
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Obrigado!!</h2>
+    <h2>Bibliografia</h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -269,13 +324,56 @@ body {background:grey transparent;
 <li><p>[2] BOTTOMLEY, P.; NAIRN, A. <code>Blinded by science: The managerial consequences of inadequately validated cluster analysis solutions.</code> International Journal of Market Research, v. 46, n. 2, 2004. 1</p></li>
 <li><p>[3] FUENTES, C.; CASELLA, G. <code>Testing for the existence of clusters.</code> p. 115–157, Jul 2009. Sort (Barc). 33(2). 1</p></li>
 <li><p>[4] HALKIDI Y. BATISTAKIS, M. V. M. <code>On clustering validation techniques. Journal of Intelligent Information Systems</code>, v. 17, n. 2/3, p. 107–145, 2001. 1</p></li>
-<li><p>[5] SAS Institute Inc., <code>Cubic Clustering Criterion.</code> 1983. SAS R Technical Report A-108. Cary,
+<li><p>[5] SAS Institute Inc., <code>Cubic Clustering Criterion.</code> 1983. SAS Technical Report A-108. Cary,
 NC: SAS Institute Inc., 1983, 56 pp. 2</p></li>
 </ul>
 
 <!-- - [5] HANDL, J.; KNOWLES, J. `An evolutionary approach to objective clustering.` IEEE Transactions on Evolutionary Computation, v. 11, n. 1, Feb 2007. 2 -->
 
 <!-- - [5] LIU, Y. et al. `Statistical significance of clustering for high-dimension, low-sample size data.` Journal of the American Statistical Association, v. 103, n. 483, p. 1281–1293, Sep 2008. 1 -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-13" style="background:grey;">
+  <hgroup>
+    <h1>Obrigado!!</h1>
+  </hgroup>
+  <article data-timings="">
+    <div>
+    <p>Feito no
+    <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com 
+    <img src="./assets/img/slidifylogo2.png" style="float: center; width: 12%;">;
+    <img src="./assets/img/plotlylogo.png" style="float: center; width: 7%;"> e
+    <img src="./assets/img/ggplotlogo.png" style="float: center; width: 7%;">!! </p>
+</div>
+
+<p>Códigos e apresentação disponíveis em:</p>
+
+<div>
+    <p>
+    <img src="./assets/img/gitlogo1.png" style="float: left; width: 5%;">
+    http://github.com/allanvc/
+    </p>
+</div>
+
+<p><br>
+<br></p>
+
+<!-- --- .class #id -->
+
+<!-- ## Obrigado!! -->
+
+<!-- <div> -->
+
+<!--     <p>Feito no -->
+
+<!--     <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com  -->
+
+<!--     <img src="./assets/img/slidifylogo2.png" style="float: center; width: 10%;">!! </p> -->
+
+<!-- </div> -->
 
   </article>
   <!-- Presenter Notes -->
@@ -311,13 +409,13 @@ NC: SAS Institute Inc., 1983, 56 pp. 2</p></li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='O algoritmo ...'>
+        data-slide=5 title='Metodologia (1)'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Metodologia (1)'>
+        data-slide=6 title='O algoritmo ...'>
          6
       </a>
     </li>
@@ -329,26 +427,38 @@ NC: SAS Institute Inc., 1983, 56 pp. 2</p></li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Alguns resultados ...'>
+        data-slide=8 title='Metodologia (3)'>
          8
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='NA'>
+        data-slide=9 title='Alguns resultados ...'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Cronograma'>
+        data-slide=10 title='NA'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Obrigado!!'>
+        data-slide=11 title='Cronograma'>
          11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Bibliografia'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Obrigado!!'>
+         13
       </a>
     </li>
   </ul>
