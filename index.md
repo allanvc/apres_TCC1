@@ -2,7 +2,7 @@
 title       : Um teste para verificar a significância de clusters
 subtitle    : Projeto de Pesquisa - TCC I
 author      : Allan Vieira
-job         : 14/0128492
+job         : Orientador - Prof. Dr. André Cançado
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -26,11 +26,12 @@ ul.nav li::before { content: ""; }
 ul.nav li{ font-size: 18px; line-height: 24px;}
 </style>
 
-<script type="text/javascript" src="gifffer.min.js"></script>
+
 
 ## Sumário
 <br>
 <br>
+
 1. Introdução
 
 2. Objetivos
@@ -69,19 +70,13 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 
 --- .class #id
 ## Objetivos
-<div align="center">
 <br>
 <br>
+> - Desenvolver um algoritmo para testar a significância de clusters;
 <br>
 <br>
-- Desenvolver um algoritmo para testar a significância de clusters;
-<br>
-<br>
-<br>
-<br>
-<br>
-- Implementar o algoritmo em R e disponibilizá-lo através de um pacote;
-</div>
+> - Implementar o algoritmo em R e disponibilizá-lo através de um pacote;
+
 
 
 <!-- --- &twocol  -->
@@ -106,10 +101,46 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 
 ## Metodologia (1)
 
-*** {class: active, id: left_right}
+*** {class: active, id: kmeans}
+Algumas restrições:
+
+<!-- - _shape_ dos clusters; -->
+<!-- - tamanhos diferentes em cada cluster; -->
+
+<p>
+<img src="./assets/img/nflunch11.svg" style="float: left; width: 24%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/nflunch12.svg" style="float: left; width: 24%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/nflunch21.svg" style="float: left; width: 24%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/nflunch22.svg" style="float: left; width: 24%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<!-- <p> -->
+<!-- <span style="font-size:0.7em; float: left">Baseado no conteúdo de:  -->
+<!-- <a href="http://varianceexplained.org/r/kmeans-free-lunch/">http://varianceexplained.org/r/kmeans-free-lunch/</a> -->
+<!-- </span> -->
+<!-- </p> -->
+</p>
+<br>
+<span style="font-size:0.7em; float: left">
+Baseado no conteúdo de http://varianceexplained.org/r/kmeans-free-lunch/
+</span>
+
+<br>
+<br>
+
+> - .fragment $\rightarrow$ `No free lunch!!`
+
+
+
+*** {id: left_right}
 Funcionamento do kmeans:
-</br>
+<br>
+<span style="font-size:0.7em; float: left">
 (por Andrey A. Shabalin - http://shabal.in/)
+</span>
+<br>
 <p>
 <img src="./assets/img/left.gif" style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
 <img src="./assets/img/right.gif" style="float: right; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
@@ -124,7 +155,7 @@ Funcionamento do kmeans:
 
 
 --- .segue bg:grey
-# O algoritmo ...
+# O método proposto ...
 
 --- .class #id
 ## Metodologia (2)
@@ -191,16 +222,16 @@ inspiração: `Cubic Clustering Criterion (CCC)`
 --- .class #id
 ## Bibliografia
 
-- [1] AUFFERMANN, W. F.; NGAN, S. C.; HU, X. `Cluster significance testing using the bootstrap.` NeuroImage, v. 17, p. 583–591, 2002. 1
+- [1] AUFFERMANN, W. F.; NGAN, S. C.; HU, X. `Cluster significance testing using the bootstrap.` NeuroImage, v. 17, p. 583–591, 2002.
 
-- [2] BOTTOMLEY, P.; NAIRN, A. `Blinded by science: The managerial consequences of inadequately validated cluster analysis solutions.` International Journal of Market Research, v. 46, n. 2, 2004. 1
+- [2] BOTTOMLEY, P.; NAIRN, A. `Blinded by science: The managerial consequences of inadequately validated cluster analysis solutions.` International Journal of Market Research, v. 46, n. 2, 2004.
 
-- [3] FUENTES, C.; CASELLA, G. `Testing for the existence of clusters.` p. 115–157, Jul 2009. Sort (Barc). 33(2). 1
+- [3] FUENTES, C.; CASELLA, G. `Testing for the existence of clusters.` p. 115–157, Jul 2009. Sort (Barc). 33(2).
 
-- [4] HALKIDI Y. BATISTAKIS, M. V. M. `On clustering validation techniques. Journal of Intelligent Information Systems`, v. 17, n. 2/3, p. 107–145, 2001. 1
+- [4] HALKIDI Y. BATISTAKIS, M. V. M. `On clustering validation techniques. Journal of Intelligent Information Systems`, v. 17, n. 2/3, p. 107–145, 2001.
 
 - [5] SAS Institute Inc., `Cubic Clustering Criterion.` 1983. SAS Technical Report A-108. Cary,
-NC: SAS Institute Inc., 1983, 56 pp. 2
+NC: SAS Institute Inc., 1983, 56 pp.
 
 <!-- - [5] HANDL, J.; KNOWLES, J. `An evolutionary approach to objective clustering.` IEEE Transactions on Evolutionary Computation, v. 11, n. 1, Feb 2007. 2 -->
 
@@ -211,30 +242,22 @@ NC: SAS Institute Inc., 1983, 56 pp. 2
 
 # Obrigado!!
 
+<!-- como colocar figuras ao lado de palavras varias vezes em html -->
 <div>
     <p>Feito no
     <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com 
-    <img src="./assets/img/slidifylogo2.png" style="float: center; width: 12%;">;
+    <img src="./assets/img/slidifylogo2.png" style="float: center; width: 12%;">,
     <img src="./assets/img/plotlylogo.png" style="float: center; width: 7%;"> e
-    <img src="./assets/img/ggplotlogo.png" style="float: center; width: 7%;">!! </p>
+    <img src="./assets/img/ggplotlogo.png" style="float: center; width: 7%;"> !! </p>
 </div>
 
-Códigos e apresentação disponíveis em:
-<div>
-    <p>
-    <img src="./assets/img/gitlogo1.png" style="float: left; width: 5%;">
-    http://github.com/allanvc/
-    </p>
-</div>
+Códigos e apresentação disponíveis no<img src="./assets/img/gitlogo5.png" style="float: center; width: 13%;">em:
 <br>
-<br>
+<p>
+<a href="http://github.com/allanvc/" style="color:black">http://github.com/allanvc/</a>
+</p>
 
-<!-- --- .class #id -->
-<!-- ## Obrigado!! -->
+<p>
+<a href="http://allanvc.github.io/apres_TCC1/" style="color:black">http://allanvc.github.io/apres_TCC1/</a>
+</p>
 
-
-<!-- <div> -->
-<!--     <p>Feito no -->
-<!--     <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com  -->
-<!--     <img src="./assets/img/slidifylogo2.png" style="float: center; width: 10%;">!! </p> -->
-<!-- </div> -->

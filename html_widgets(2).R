@@ -49,7 +49,7 @@ p <- plot_ly(as.data.frame(d), x = d[,1], y = d[,2], z = d[,3])
 p <- plot_ly(as.data.frame(d)) %>%
   add_trace(x = d[,1], y = d[,2], z = d[,3])
 
-p <- p %>% add_trace(x = simd[,1], y = simd[,2], z = simd[,3])
+p <- p %>% add_trace(x = simd[,1], y = simd[,2], z = simd[,3], visible=FALSE)
 # ok! funcionou! eh soh ir clicando para ativar o trace!!!
 
 saveWidget(as_widget(p), file = "hipercube_plot.html")
@@ -195,3 +195,53 @@ p2 <- p2 %>% add_segments(x = centsim[2,1], xend = simdc2[,1],
 saveWidget(as_widget(p2), file = "withinss_cube_plot.html")
 
 
+# DEMONSTRAÇÃO DAS RESTRIÇÕES DO KMEANS:
+# baseado no código de http://varianceexplained.org/r/kmeans-free-lunch/
+install.packages("broom")
+
+library(plyr)
+library(dplyr)
+library(ggplot2)
+
+# CIRCULAR:
+
+set.seed(2015)
+
+n <- 250
+c1 <- data_frame(x = rnorm(n), y = rnorm(n), cluster = 1)
+c2 <- data_frame(r = rnorm(n, 5, .25), theta = runif(n, 0, 2 * pi),
+                 x = r * cos(theta), y = r * sin(theta), cluster = 2) %>%
+  dplyr::select(x, y, cluster)
+
+points1 <- rbind(c1, c2) %>% mutate(cluster = factor(cluster))
+
+ggplot(points1, aes(x, y)) + geom_point()
+
+
+library(broom)
+
+
+plot_kmeans <- function(dat, k) {
+  clust <- dat %>% ungroup %>% dplyr::select(x, y) %>% kmeans(k)
+  ggplot(augment(clust, dat), aes(x, y)) + geom_point(aes(color = .cluster)) +
+    geom_point(aes(x1, x2), data = tidy(clust), size = 10, shape = "x")
+}
+
+plot_kmeans(points1, 2)
+
+
+# UNEVENLY SIZED CLUSTERS
+sizes <- c(20, 100, 500)
+
+
+set.seed(2015)
+
+centers <- data_frame(x = c(1, 4, 6), y = c(5, 0, 6), n = sizes,
+                      cluster = factor(1:3))
+points <- centers %>% group_by(cluster) %>%
+  do(data_frame(x = rnorm(.$n, .$x), y = rnorm(.$n, .$y)))
+
+ggplot(points, aes(x, y)) + geom_point()
+
+
+plot_kmeans(points, 3)

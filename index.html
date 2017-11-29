@@ -48,7 +48,7 @@
   <hgroup class="auto-fadein">
     <h1>Um teste para verificar a significância de clusters</h1>
     <h2>Projeto de Pesquisa - TCC I</h2>
-    <p>Allan Vieira<br/>14/0128492</p>
+    <p>Allan Vieira<br/>Orientador - Prof. Dr. André Cançado</p>
   </hgroup>
   <article></article>  
 </slide>
@@ -68,15 +68,13 @@ ul.nav li::before { content: ""; }
 ul.nav li{ font-size: 18px; line-height: 24px;}
 </style>
 
-<script type="text/javascript" src="gifffer.min.js"></script>
-
 <h2>Sumário</h2>
 
 <p><br>
-<br>
-1. Introdução</p>
+<br></p>
 
 <ol>
+<li><p>Introdução</p></li>
 <li><p>Objetivos</p></li>
 <li><p>Metodologia</p></li>
 <li><p>Resultados Preliminares</p></li>
@@ -134,19 +132,15 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
     <h2>Objetivos</h2>
   </hgroup>
   <article data-timings="">
-    <div align="center">
+    <p><br>
+<br></p>
+
+<ul class = "build incremental">
+<li>Desenvolver um algoritmo para testar a significância de clusters;
 <br>
-<br>
-<br>
-<br>
-- Desenvolver um algoritmo para testar a significância de clusters;
-<br>
-<br>
-<br>
-<br>
-<br>
-- Implementar o algoritmo em R e disponibilizá-lo através de um pacote;
-</div>
+<br></li>
+<li>Implementar o algoritmo em R e disponibilizá-lo através de um pacote;</li>
+</ul>
 
 <!-- --- &twocol  -->
 
@@ -180,14 +174,54 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
     
 <div class="tabbable">
   <ul class="nav nav-pills">
-    <li class="tab active"><a href="#left_right" data-toggle="pill">left_right</a></li>
+    <li class="tab active"><a href="#kmeans" data-toggle="pill">kmeans</a></li>
+    <li class="tab "><a href="#left_right" data-toggle="pill">left_right</a></li>
     <li class="tab "><a href="#top_bottom" data-toggle="pill">top_bottom</a></li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane fade in active" id="left_right">
+    <div class="tab-pane fade in active" id="kmeans">
+      <p>Algumas restrições:</p>
+
+<!-- - _shape_ dos clusters; -->
+
+<!-- - tamanhos diferentes em cada cluster; -->
+
+<p>
+<img src="./assets/img/nflunch11.svg" style="float: left; width: 24%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/nflunch12.svg" style="float: left; width: 24%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/nflunch21.svg" style="float: left; width: 24%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<img src="./assets/img/nflunch22.svg" style="float: left; width: 24%; margin-right: 1%; margin-bottom: 0.5em;">
+
+<!-- <p> -->
+<!-- <span style="font-size:0.7em; float: left">Baseado no conteúdo de:  -->
+<!-- <a href="http://varianceexplained.org/r/kmeans-free-lunch/">http://varianceexplained.org/r/kmeans-free-lunch/</a> -->
+<!-- </span> -->
+<!-- </p> -->
+</p>
+
+<p><br>
+<span style="font-size:0.7em; float: left">
+Baseado no conteúdo de <a href="http://varianceexplained.org/r/kmeans-free-lunch/">http://varianceexplained.org/r/kmeans-free-lunch/</a>
+</span></p>
+
+<p><br>
+<br></p>
+
+<ul class = "build incremental">
+<li class='fragment'>\(\rightarrow\) <code>No free lunch!!</code></li>
+</ul>
+
+    </div>
+    <div class="tab-pane fade in " id="left_right">
       <p>Funcionamento do kmeans:
-</br>
-(por Andrey A. Shabalin - <a href="http://shabal.in/">http://shabal.in/</a>)</p>
+<br>
+<span style="font-size:0.7em; float: left">
+(por Andrey A. Shabalin - <a href="http://shabal.in/">http://shabal.in/</a>)
+</span>
+<br></p>
 
 <p>
 <img src="./assets/img/left.gif" style="float: left; width: 48%; margin-right: 1%; margin-bottom: 0.5em;">
@@ -212,7 +246,7 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 
 <slide class="segue" id="slide-6" style="background:grey;">
   <hgroup>
-    <h1>O algoritmo ...</h1>
+    <h1>O método proposto ...</h1>
   </hgroup>
   <article data-timings="">
     
@@ -320,12 +354,12 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>[1] AUFFERMANN, W. F.; NGAN, S. C.; HU, X. <code>Cluster significance testing using the bootstrap.</code> NeuroImage, v. 17, p. 583–591, 2002. 1</p></li>
-<li><p>[2] BOTTOMLEY, P.; NAIRN, A. <code>Blinded by science: The managerial consequences of inadequately validated cluster analysis solutions.</code> International Journal of Market Research, v. 46, n. 2, 2004. 1</p></li>
-<li><p>[3] FUENTES, C.; CASELLA, G. <code>Testing for the existence of clusters.</code> p. 115–157, Jul 2009. Sort (Barc). 33(2). 1</p></li>
-<li><p>[4] HALKIDI Y. BATISTAKIS, M. V. M. <code>On clustering validation techniques. Journal of Intelligent Information Systems</code>, v. 17, n. 2/3, p. 107–145, 2001. 1</p></li>
+<li><p>[1] AUFFERMANN, W. F.; NGAN, S. C.; HU, X. <code>Cluster significance testing using the bootstrap.</code> NeuroImage, v. 17, p. 583–591, 2002.</p></li>
+<li><p>[2] BOTTOMLEY, P.; NAIRN, A. <code>Blinded by science: The managerial consequences of inadequately validated cluster analysis solutions.</code> International Journal of Market Research, v. 46, n. 2, 2004.</p></li>
+<li><p>[3] FUENTES, C.; CASELLA, G. <code>Testing for the existence of clusters.</code> p. 115–157, Jul 2009. Sort (Barc). 33(2).</p></li>
+<li><p>[4] HALKIDI Y. BATISTAKIS, M. V. M. <code>On clustering validation techniques. Journal of Intelligent Information Systems</code>, v. 17, n. 2/3, p. 107–145, 2001.</p></li>
 <li><p>[5] SAS Institute Inc., <code>Cubic Clustering Criterion.</code> 1983. SAS Technical Report A-108. Cary,
-NC: SAS Institute Inc., 1983, 56 pp. 2</p></li>
+NC: SAS Institute Inc., 1983, 56 pp.</p></li>
 </ul>
 
 <!-- - [5] HANDL, J.; KNOWLES, J. `An evolutionary approach to objective clustering.` IEEE Transactions on Evolutionary Computation, v. 11, n. 1, Feb 2007. 2 -->
@@ -341,39 +375,26 @@ NC: SAS Institute Inc., 1983, 56 pp. 2</p></li>
     <h1>Obrigado!!</h1>
   </hgroup>
   <article data-timings="">
-    <div>
-    <p>Feito no
-    <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com 
-    <img src="./assets/img/slidifylogo2.png" style="float: center; width: 12%;">;
-    <img src="./assets/img/plotlylogo.png" style="float: center; width: 7%;"> e
-    <img src="./assets/img/ggplotlogo.png" style="float: center; width: 7%;">!! </p>
-</div>
-
-<p>Códigos e apresentação disponíveis em:</p>
+    <!-- como colocar figuras ao lado de palavras varias vezes em html -->
 
 <div>
-    <p>
-    <img src="./assets/img/gitlogo1.png" style="float: left; width: 5%;">
-    http://github.com/allanvc/
-    </p>
+    <p>Feito no
+    <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com 
+    <img src="./assets/img/slidifylogo2.png" style="float: center; width: 12%;">,
+    <img src="./assets/img/plotlylogo.png" style="float: center; width: 7%;"> e
+    <img src="./assets/img/ggplotlogo.png" style="float: center; width: 7%;"> !! </p>
 </div>
 
-<p><br>
+<p>Códigos e apresentação disponíveis no<img src="./assets/img/gitlogo5.png" style="float: center; width: 13%;">em:
 <br></p>
 
-<!-- --- .class #id -->
+<p>
+<a href="http://github.com/allanvc/" style="color:black">http://github.com/allanvc/</a>
+</p>
 
-<!-- ## Obrigado!! -->
-
-<!-- <div> -->
-
-<!--     <p>Feito no -->
-
-<!--     <img src="./assets/img/rball.png" style="float: center; width: 5%;"> com  -->
-
-<!--     <img src="./assets/img/slidifylogo2.png" style="float: center; width: 10%;">!! </p> -->
-
-<!-- </div> -->
+<p>
+<a href="http://allanvc.github.io/apres_TCC1/" style="color:black">http://allanvc.github.io/apres_TCC1/</a>
+</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -415,7 +436,7 @@ NC: SAS Institute Inc., 1983, 56 pp. 2</p></li>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='O algoritmo ...'>
+        data-slide=6 title='O método proposto ...'>
          6
       </a>
     </li>
